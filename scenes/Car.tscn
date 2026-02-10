@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://7wy1mty6wpi4"]
+
+[ext_resource type="Texture2D" uid="uid://d26crkvrdd4m" path="res://Black_SUV_CLEAN_All_000-sheet.png" id="1_7u4s5"]
+[ext_resource type="Script" uid="uid://2ppvlk8tj0xy" path="res://scenes/Car.gd" id="1_ys5ts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u4s5"]
+size = Vector2(110, 199)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qn377"]
+size = Vector2(181, 291)
+
+[node name="Car" type="StaticBody2D"]
+script = ExtResource("1_ys5ts")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(3.3351452, 3.3351448)
+texture = ExtResource("1_7u4s5")
+region_enabled = true
+region_rect = Rect2(127.111946, 516.6011, 45.766975, 69.09839)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_7u4s5")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-1.5, -1.5)
+shape = SubResource("RectangleShape2D_qn377")
+debug_color = Color(0.8972154, 0.0001915604, 0.77433336, 0.41960785)
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

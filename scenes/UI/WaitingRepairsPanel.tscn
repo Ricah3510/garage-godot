@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfpknf7c70xxf"]
+
+[ext_resource type="Script" uid="uid://178v71432qf0" path="res://scenes/UI/WaitingRepairsPanel.gd" id="1_u8ipp"]
+
+[node name="WaitingRepairsPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_u8ipp")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 494.0
+offset_bottom = 235.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 12.0
+offset_right = 483.0
+offset_bottom = 253.0
+
+[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Réparations en attente"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="ListContainer" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Fermer"
+
+[connection signal="pressed" from="Panel/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvy57ju6w5t7s"]
+
+[ext_resource type="Script" uid="uid://don4f4tyb2tfw" path="res://scenes/UI/GarageOverlay.gd" id="1_5sros"]
+
+[node name="GarageOverlay" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = 17.0
+offset_right = 200.0
+offset_bottom = 17.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_5sros")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="MessageLabel" type="Label" parent="CenterContainer/Panel"]
+layout_mode = 0
+offset_left = -68.0
+offset_top = -14.0
+offset_right = 68.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 20
+text = "Chargement..."
+vertical_alignment = 1
